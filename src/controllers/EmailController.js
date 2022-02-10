@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer"
 import "dotenv/config"
 
-const emails = [ "amorimclark@gmail.com", "julho1104@gmail.com" ]
+const email = "amorimclark@gmail.com"
 const user = process.env.USER_EMAIL
 const pass = process.env.PASSWORD
 
@@ -24,9 +24,9 @@ export class EmailController {
 
     const message = await transport.sendMail({
       from: "sender@service.com",
-      to: emails,
+      to: email,
       subject: "Messagem",
-      html: "<h2>O primeiro email enviado!</h2>",
+      html: "<h2>O primeiro email enviado!</h2><br/><p>Helloooooooo World</p>",
       text: "Texto de exemplo",
       date: new Date()
     })
